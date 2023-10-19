@@ -26,7 +26,7 @@ server.set('views', Path.resolve('server/views'))
 // Your routes/router(s) should go here
 // server.use('/routes', routes)
 server.get('/', (req, res) => {
-  res.render('home')
+  res.render('openingStory')
 })
 
 export default server
