@@ -1,7 +1,8 @@
-const server = require('./server')
+import server from './server.js'
 
-const PORT = 3000
+const port = 3000
 
-server.listen(PORT, function () {
-  console.log('Listening on port', PORT)
+server.listen(port, function () {
+  // eslint-disable-next-line no-console
+  console.log('Server is listening on port', port)
 })

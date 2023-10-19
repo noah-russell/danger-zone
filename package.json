@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.2.0",
   "description": "Boilerplate for Phase 1 EDA",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js",
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
     "test": "vitest"
   },
   "repository": {
