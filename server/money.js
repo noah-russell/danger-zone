@@ -27,48 +27,49 @@
 
 // - - CODE - - - //
 
-let moneyTotal = 100; // Initial money total (display total)
-const bettingIncrements = [5, 10, 25]; // Betting increments (bind to buttons)
-let selectedBet = null; // Keeps track of selected bet
-let raceStarted = false; // Tracks whether the race has started or not
-let raceNumber = 1; // Keeps track of race/round number
+let moneyTotal = 100 // Initial money total (display total)
+const bettingIncrements = [5, 10, 25] // Betting increments (bind to buttons)
+let selectedBet = null // Keeps track of selected bet
+let raceStarted = false // Tracks whether the race has started or not
+let raceNumber = 1 // Keeps track of race/round number
 
 function placeBet(betIndex) {
   if (!raceStarted) {
-    selectedBet = betIndex;
+    selectedBet = betIndex
   } else {
-    console.log('Invalid bet selection'); // If the race has started, bets can't be placed
+    console.log('Invalid bet selection') // If the race has started, bets can't be placed
   }
 }
 
 function startRace() {
   if (selectedBet === null) {
-    console.log('Please select a bet amount.');
-    return;
+    console.log('Please select a bet amount.')
+    return
   }
 
-  const betAmount = bettingIncrements[selectedBet]; // Use the global bettingIncrements array
+  const betAmount = bettingIncrements[selectedBet] // Use the global bettingIncrements array
 
-  raceStarted = true;
+  raceStarted = true
 
-  const isWin = // Win/loss condition here
+  const isWin = true
 
   if (isWin) {
-    moneyTotal += betAmount;
-    console.log(`Round ${raceNumber} Win! You win $${betAmount}. Total money: $${moneyTotal}`);
+    moneyTotal += betAmount
+    console.log(
+      `Round ${raceNumber} Win! You win $${betAmount}. Total money: $${moneyTotal}`
+    )
   } else {
-    moneyTotal -= betAmount;
-    console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`);
+    moneyTotal -= betAmount
+    console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`)
   }
 
   if (moneyTotal < 5 || raceNumber >= 5) {
-    const gameOverMessage = moneyTotal < 5 ? 'Game Over' : moneyTotal >= 100 ? 'Game Win' : '';
+    const gameOverMessage =
+      moneyTotal < 5 ? 'Game Over' : moneyTotal >= 100 ? 'Game Win' : ''
     if (gameOverMessage) {
-      console.log(gameOverMessage);
+      console.log(gameOverMessage)
     }
   } else {
-    raceNumber++;
+    raceNumber++
   }
 }
-
-
