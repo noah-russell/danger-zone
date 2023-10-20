@@ -23,26 +23,66 @@ body {
   /* padding-left: 300px; */
 }
 #raceContainer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
   justify-content: center;
   position: relative;
   height: 500px;
-  width: 800px;
+  width: 900px;
   border: 2px;
   border-style: dotted;
-  border-color: aqua;
 }
 
 /* Race 1 styles */
 
-#horse {
+.parent {
   position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #000000;
+}
+
+.image2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: 1px solid #000000;
+}
+.image3 {
+  position: absolute;
+  top: 260px;
+  left: 560px;
+  border: 1px solid #000000;
+}
+.image4 {
+  position: absolute;
+  top: 400px;
+  left: 560px;
+  border: 1px solid #000000;
+}
+.image5 {
+  position: absolute;
+  top: 540px;
+  left: 560px;
+  border: 1px solid #000000;
+}
+
+#horse {
   width: 100px;
   height: 100px;
   background: white;
   animation-name: slideRight;
-  animation-duration: 8s;
+  animation-duration: 6s;
   animation-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 10s;
   animation-iteration-count: 1;
   animation-direction: mode;
   animation-fill-mode: forwards;
@@ -61,18 +101,17 @@ body {
     transform: translateX(525px);
   }
   100% {
-    transform: translateX(700px);
+    transform: translateX(800px);
   }
 }
 #cheetah {
-  position: relative;
   width: 100px;
   height: 100px;
   background: teal;
   animation-name: sprintRight;
-  animation-duration: 7s;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
-  animation-delay: 1s;
+  animation-delay: 10s;
   animation-iteration-count: 1;
   animation-direction: mode;
   animation-fill-mode: forwards;
@@ -85,18 +124,17 @@ body {
     transform: translateX(500px);
   }
   100% {
-    transform: translateX(700px);
+    transform: translateX(800px);
   }
 }
 #Mysterio {
-  position: relative;
   width: 100px;
   height: 100px;
   background: yellowgreen;
   animation-name: floatRight;
-  animation-duration: 6s;
+  animation-duration: 5.5s;
   animation-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 10s;
   animation-iteration-count: 1;
   animation-direction: mode;
   animation-fill-mode: forwards;
@@ -115,18 +153,17 @@ body {
     transform: translateX(525px);
   }
   100% {
-    transform: translateX(700px);
+    transform: translateX(800px);
   }
 }
 #Zambia {
-  position: relative;
   width: 100px;
   height: 100px;
   background: mediumslateblue;
   animation-name: continentalShiftRight;
-  animation-duration: 5.5s;
+  animation-duration: 9s;
   animation-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 10s;
   animation-iteration-count: 1;
   animation-direction: mode;
   animation-fill-mode: forwards;
@@ -145,6 +182,6 @@ body {
     transform: translateX(525px);
   }
   100% {
-    transform: translateX(700px);
+    transform: translateX(800px);
   }
 }

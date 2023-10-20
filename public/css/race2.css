@@ -4,8 +4,15 @@ body{
   align-items: center;
   background: #111;
 }
+footer {
+  color: wheat;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
 #container{
   position: relative;
+  width: 50%;
   height: 500px;
   width: 800px;
   border: 2px;
