@@ -30,11 +30,6 @@ router.get('/winScreen', (req, res) => {
 
 export default router
 
-
-
-
-
-
 // router.get('/:id', async (req, res) => {
 //   // JSON format is convenient for reading and writing
 //   let jsonData = await fsPromises.readFile('server/data/data.json', 'utf-8')

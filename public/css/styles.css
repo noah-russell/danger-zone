@@ -1,5 +1,6 @@
 body {
   background: black;
+  color: white;
 }
 .heading {
   text-align: center;
@@ -15,12 +16,14 @@ body {
   text-align: center;
 }
 .dangerZone {
+
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
   height: auto;
   /* padding-left: 300px; */
+main
 }
 #raceContainer {
   justify-content: center;
