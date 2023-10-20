@@ -29,15 +29,15 @@
 
 let moneyTotal = 100 // Initial money total (display total)
 const bettingIncrements = [5, 10, 25] // Betting increments (bind to buttons)
-let selectedBet = null // keeps track of selected bet
-let raceStarted = false // tracks whether race has started or not
-let raceNumber = 1 // keeps track of race/round number
+let selectedBet = null // Keeps track of selected bet
+let raceStarted = false // Tracks whether the race has started or not
+let raceNumber = 1 // Keeps track of race/round number
 
 function placeBet(betIndex) {
   if (!raceStarted) {
     selectedBet = betIndex
   } else {
-    console.log('Invalid bet selection') // if race has started, bets can't be placed
+    console.log('Invalid bet selection') // If the race has started, bets can't be placed
   }
 }
 
@@ -47,10 +47,11 @@ function startRace() {
     return
   }
 
-  const betAmount = bettingIncrements[selectedBet]
+  const betAmount = bettingIncrements[selectedBet] // Use the global bettingIncrements array
 
   raceStarted = true
-  const isWin = simulateRaceOutcome()
+
+  const isWin = true
 
   if (isWin) {
     moneyTotal += betAmount
