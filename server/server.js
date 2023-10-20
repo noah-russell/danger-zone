@@ -31,7 +31,9 @@ server.get('/', (req, res) => {
 server.get('/race', (req, res) => {
   res.render('race')
 })
-
+server.get('/lose', (req, res) => {
+  res.render('loseScreen')
+})
 server.use('/horse-racing', indexRoutes)
 
 export default server

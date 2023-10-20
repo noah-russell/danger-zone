@@ -1,5 +1,17 @@
 body {
-  background: black;
+  background-image: linear-gradient(
+    to right,
+    #a54d00,
+    #6e0000,
+    #221212,
+    #221212,
+    #221212,
+    #221212,
+    #221212,
+    #221212,
+    #6e0000,
+    #a54d00
+  );
 }
 .heading {
   text-align: center;
@@ -20,7 +32,8 @@ body {
   margin-right: auto;
   width: 40%;
   height: auto;
-  /* padding-left: 300px; */
+  border: 10px solid yellow;
+  border-radius: 10px;
 }
 #raceContainer {
   justify-content: center;
@@ -147,4 +160,15 @@ body {
   100% {
     transform: translateX(700px);
   }
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  margin-top: 3rem;
+  padding: 3rem 0px 3rem 10px;
+  text-align: center;
+  background: rgb(155, 188, 255);
 }
