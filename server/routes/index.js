@@ -2,13 +2,9 @@ import * as path from 'node:path'
 import express from 'express'
 const router = express.Router()
 
-// router.get('/', (req, res) => {
-//   res.render('main', { hi: 'Hello World!' })
-// })
+// --Races Routes--
 
-router.get('/race1', async (req, res) => {
-  // let jsonData = await fsPromises.readFile('server/data/data.json', 'utf-8')
-  // let puppyData = JSON.parse(jsonData)
+router.get('/race', (req, res) => {
   res.render('race')
 })
 
