@@ -1,11 +1,12 @@
 body {
   background: black;
+  color: white;
 }
-.heading{
+.heading {
   text-align: center;
   color: white;
 }
-.margins{
+.margins {
   margin: auto;
   margin-bottom: 20px;
   padding-left: 20px;
@@ -14,8 +15,8 @@ body {
   color: white;
   text-align: center;
 }
-.dangerZone{
-  margin:auto;
+.dangerZone {
+  margin: auto;
   padding-left: 300px;
 }
 #raceContainer {
