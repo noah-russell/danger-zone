@@ -29,15 +29,15 @@
 
 let moneyTotal = 100 // Initial money total (display total)
 const bettingIncrements = [5, 10, 25] // Betting increments (bind to buttons)
-let selectedBet = null
-let raceStarted = false
-let raceNumber = 1
+let selectedBet = null // keeps track of selected bet
+let raceStarted = false // tracks whether race has started or not
+let raceNumber = 1 // keeps track of race/round number
 
 function placeBet(betIndex) {
   if (!raceStarted) {
     selectedBet = betIndex
   } else {
-    console.log('Invalid bet selection')
+    console.log('Invalid bet selection') // if race has started, bets can't be placed
   }
 }
 
@@ -68,7 +68,6 @@ function startRace() {
     if (gameOverMessage) {
       console.log(gameOverMessage)
     }
-    // You may add additional conditions for a maximum of 5 rounds here.
   } else {
     raceNumber++
   }
