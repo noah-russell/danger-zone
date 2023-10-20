@@ -27,44 +27,49 @@
 
 // - - CODE - - - //
 
-let moneyTotal = 100 // display total
-const bettingIncrements = [5, 10, 25] // bind to buttons
+let moneyTotal = 100 // Initial money total (display total)
+const bettingIncrements = [5, 10, 25] // Betting increments (bind to buttons)
+let selectedBet = null
+let raceStarted = false
+let raceNumber = 1
 
 function placeBet(betIndex) {
   if (!raceStarted) {
-    if (betIndex >= 0 && betIndex < bettingIncrements.length) {
-      selectedBet = betIndex
-    } else {
-      console.log('Invalid bet selection')
-    }
+    selectedBet = betIndex
+  } else {
+    console.log('Invalid bet selection')
   }
 }
 
 function startRace() {
   if (selectedBet === null) {
     console.log('Please select a bet amount.')
-  } else {
-    raceStarted = true
-    const isWin = simulateRaceOutcome()
-    if (isWin) {
-      moneyTotal += bettingIncrements[selectedBet] * 2
-      console.log(
-        `Round ${raceNumber} Win! You win $${bettingIncrements[selectedBet]}. Total money: $${moneyTotal}`
-      )
-    } else {
-      moneyTotal -= bettingIncrements[selectedBet]
-      console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`)
-    }
+    return
+  }
 
-    if (moneyTotal < 5) {
-      console.log('Game Over')
-    } else if (moneyTotal >= 100 && raceNumber > 1) {
-      console.log('Game Win (Overall Win)')
-    } else if (raceNumber > 1) {
-      raceNumber++
+  const betAmount = bettingIncrements[selectedBet]
+
+  raceStarted = true
+  const isWin = simulateRaceOutcome()
+
+  if (isWin) {
+    moneyTotal += betAmount
+    console.log(
+      `Round ${raceNumber} Win! You win $${betAmount}. Total money: $${moneyTotal}`
+    )
+  } else {
+    moneyTotal -= betAmount
+    console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`)
+  }
+
+  if (moneyTotal < 5 || raceNumber >= 5) {
+    const gameOverMessage =
+      moneyTotal < 5 ? 'Game Over' : moneyTotal >= 100 ? 'Game Win' : ''
+    if (gameOverMessage) {
+      console.log(gameOverMessage)
     }
+    // You may add additional conditions for a maximum of 5 rounds here.
+  } else {
+    raceNumber++
   }
 }
-
-placeBet()
-startRace()
