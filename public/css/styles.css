@@ -1,8 +1,9 @@
 body {
-  background: whitesmoke;
+  background: black;
 }
 .heading{
   text-align: center;
+  color: white;
 }
 .margins{
   margin: auto;
@@ -10,7 +11,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   width: 50%;
-  
+  color: white;
   text-align: center;
 }
 .dangerZone{
