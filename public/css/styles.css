@@ -1,3 +1,146 @@
-body{
-  background-color: aqua;
+body {
+  background: black;
+}
+.heading{
+  text-align: center;
+  color: white;
+}
+.margins{
+  margin: auto;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 50%;
+  color: white;
+  text-align: center;
+}
+.dangerZone{
+  margin:auto;
+  padding-left: 300px;
+}
+#raceContainer {
+  justify-content: center;
+  position: relative;
+  height: 500px;
+  width: 800px;
+  border: 2px;
+  border-style: dotted;
+  border-color: aqua;
+}
+
+/* Race 1 styles */
+
+#horse {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: white;
+  animation-name: slideRight;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: mode;
+  animation-fill-mode: forwards;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(400px);
+  }
+  75% {
+    transform: translateX(525px);
+  }
+  100% {
+    transform: translateX(700px);
+  }
+}
+#cheetah {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: teal;
+  animation-name: sprintRight;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: mode;
+  animation-fill-mode: forwards;
+}
+@keyframes sprintRight {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(700px);
+  }
+}
+#Mysterio {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: yellowgreen;
+  animation-name: floatRight;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: mode;
+  animation-fill-mode: forwards;
+}
+@keyframes floatRight {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(150px);
+  }
+  50% {
+    transform: translateX(350px);
+  }
+  75% {
+    transform: translateX(525px);
+  }
+  100% {
+    transform: translateX(700px);
+  }
+}
+#Zambia {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: mediumslateblue;
+  animation-name: continentalShiftRight;
+  animation-duration: 5.5s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: mode;
+  animation-fill-mode: forwards;
+}
+@keyframes continentalShiftRight {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(100px);
+  }
+  50% {
+    transform: translateX(300px);
+  }
+  75% {
+    transform: translateX(525px);
+  }
+  100% {
+    transform: translateX(700px);
+  }
 }
