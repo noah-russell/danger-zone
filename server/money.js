@@ -27,44 +27,48 @@
 
 // - - CODE - - - //
 
-let moneyTotal = 100 // display total
-const bettingIncrements = [5, 10, 25] // bind to buttons
+let moneyTotal = 100 // Initial money total (display total)
+const bettingIncrements = [5, 10, 25] // Betting increments (bind to buttons)
+let selectedBet = null // keeps track of selected bet
+let raceStarted = false // tracks whether race has started or not
+let raceNumber = 1 // keeps track of race/round number
 
 function placeBet(betIndex) {
   if (!raceStarted) {
-    if (betIndex >= 0 && betIndex < bettingIncrements.length) {
-      selectedBet = betIndex
-    } else {
-      console.log('Invalid bet selection')
-    }
+    selectedBet = betIndex
+  } else {
+    console.log('Invalid bet selection') // if race has started, bets can't be placed
   }
 }
 
 function startRace() {
   if (selectedBet === null) {
     console.log('Please select a bet amount.')
-  } else {
-    raceStarted = true
-    const isWin = simulateRaceOutcome()
-    if (isWin) {
-      moneyTotal += bettingIncrements[selectedBet] * 2
-      console.log(
-        `Round ${raceNumber} Win! You win $${bettingIncrements[selectedBet]}. Total money: $${moneyTotal}`
-      )
-    } else {
-      moneyTotal -= bettingIncrements[selectedBet]
-      console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`)
-    }
+    return
+  }
 
-    if (moneyTotal < 5) {
-      console.log('Game Over')
-    } else if (moneyTotal >= 100 && raceNumber > 1) {
-      console.log('Game Win (Overall Win)')
-    } else if (raceNumber > 1) {
-      raceNumber++
+  const betAmount = bettingIncrements[selectedBet]
+
+  raceStarted = true
+  const isWin = simulateRaceOutcome()
+
+  if (isWin) {
+    moneyTotal += betAmount
+    console.log(
+      `Round ${raceNumber} Win! You win $${betAmount}. Total money: $${moneyTotal}`
+    )
+  } else {
+    moneyTotal -= betAmount
+    console.log(`Round ${raceNumber} Loss. Total money: $${moneyTotal}`)
+  }
+
+  if (moneyTotal < 5 || raceNumber >= 5) {
+    const gameOverMessage =
+      moneyTotal < 5 ? 'Game Over' : moneyTotal >= 100 ? 'Game Win' : ''
+    if (gameOverMessage) {
+      console.log(gameOverMessage)
     }
+  } else {
+    raceNumber++
   }
 }
-
-placeBet()
-startRace()
