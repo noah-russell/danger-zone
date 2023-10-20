@@ -8,6 +8,14 @@ router.get('/race', (req, res) => {
   res.render('race')
 })
 
+router.get('/race/race', (req, res) => {
+  res.render('raceRace')
+})
+
+router.get('/race/race/race', (req, res) => {
+  res.render('raceRaceRace')
+})
+
 router.get('/loseScreen', (req, res) => {
   res.render('loseScreen')
 })
@@ -15,6 +23,16 @@ router.get('/loseScreen', (req, res) => {
 router.get('/winScreen', (req, res) => {
   res.render('winScreen')
 })
+
+function checkCondition(req, res, next) {
+  // You can define your condition here
+  const roundWin = true // Change this to your actual condition
+
+  if (roundLose) {
+    // Execute the next middleware in the chain
+    next()
+  }
+}
 // router.get('/:id', async (req, res) => {
 //   // JSON format is convenient for reading and writing
 //   let jsonData = await fsPromises.readFile('server/data/data.json', 'utf-8')

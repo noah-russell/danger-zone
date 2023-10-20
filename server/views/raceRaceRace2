@@ -1,0 +1,11 @@
+<div id="raceContainer">
+  <div id="horse"></div>
+  <div id="cheetah"></div>
+  <div id="Mysterio"></div>
+  <div id="Zambia"></div>
+</div>
+
+<a href="/winScreen"
+  ><img class="next" src="/public/images/7480412.png" alt="its ame" />
+  <p class="margins">Click to continue</p></a
+>
