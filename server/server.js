@@ -28,6 +28,9 @@ server.set('views', Path.resolve('server/views'))
 server.get('/', (req, res) => {
   res.render('openingStory')
 })
+server.get('/race', (req, res) => {
+  res.render('race')
+})
 
 server.use('/horse-racing', indexRoutes)
 
